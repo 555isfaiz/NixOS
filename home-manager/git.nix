@@ -1,4 +1,4 @@
-let
+{pkgs, ...}: let
   name = "555isfaiz";
 in {
   programs.git = {
