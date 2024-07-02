@@ -59,13 +59,13 @@
 
   # windows disks
   fileSystems."/run/media/fu1lp0w3r/common" = {
-      device = "/dev/nvme0n1p7";
+      device = "/dev/disk/by-uuid/3FEE24F8E3EC9143";
       fsType = "ntfs-3g";
       options = ["rw" "uid=${toString config.users.users.fu1lp0w3r.uid}"];
   };
 
   fileSystems."/run/media/fu1lp0w3r/extra" = {
-      device = "/dev/sda1";
+      device = "/dev/disk/by-uuid/65F33762C14D581B";
       fsType = "ntfs-3g";
       options = ["rw" "uid=${toString config.users.users.fu1lp0w3r.uid}"];
   };

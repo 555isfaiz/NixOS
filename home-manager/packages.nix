@@ -9,10 +9,11 @@
   packages = with pkgs; {
     linux = [
       (mpv.override {scripts = [mpvScripts.mpris];})
-      spotify
       vlc
+      vscode
+      blender
+      unityhub
       gnome-secrets
-      fragments
       # yabridge
       # yabridgectl
       # wine-staging
@@ -20,6 +21,7 @@
     ];
     cli = [
       python3
+      feh
       bat
       eza
       fd

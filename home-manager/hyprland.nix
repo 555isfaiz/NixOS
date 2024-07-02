@@ -118,7 +118,7 @@ in {
           "CTRL SHIFT, R,  ${e} quit; ags -b hypr"
           "SUPER, Space,   ${e} -t launcher"
           "SUPER, Tab,     ${e} -t overview"
-          "SUPER, Escape,  ${e} -r 'powermenu'"
+          "SUPER, Escape,  ${e} -t powermenu"
           # ",XF86Launch4,   ${e} -r 'recorder.start()'"
           ",Print,         ${e} -r 'recorder.screenshot()'"
           "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"

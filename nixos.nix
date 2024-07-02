@@ -58,6 +58,7 @@ in {
         ./home-manager/tmux.nix
         ./home-manager/wezterm.nix
         ./home-manager/alacritty.nix
+        ./home-manager/zathura.nix
         (import ./home.nix {username = username;})
       ];
     };
