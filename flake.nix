@@ -73,7 +73,7 @@
     };
 
     firefox-gnome-theme = {
-      url = "github:rafaelmardojai/firefox-gnome-theme";
+      url = "github:Naezr/ShyFox";
       flake = false;
     };
   };

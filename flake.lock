@@ -39,16 +39,16 @@
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1719758591,
-        "narHash": "sha256-3DE/UnxJxRWjtWPZuuiT3TIG7HrHf+srpmiCTFkrAQs=",
-        "owner": "rafaelmardojai",
-        "repo": "firefox-gnome-theme",
-        "rev": "8fb5267c5b3434f76983e29749aba7cd636e03ca",
+        "lastModified": 1719761247,
+        "narHash": "sha256-gfauMxgyWKiwoM8pJr/uHhs9RHmPq1WXqo6Pb5ly/BM=",
+        "owner": "Naezr",
+        "repo": "ShyFox",
+        "rev": "217a582cc441ff6c2821b56f79e5ddfa3b6e03b4",
         "type": "github"
       },
       "original": {
-        "owner": "rafaelmardojai",
-        "repo": "firefox-gnome-theme",
+        "owner": "Naezr",
+        "repo": "ShyFox",
         "type": "github"
       }
     },

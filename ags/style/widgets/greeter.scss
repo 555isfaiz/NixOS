@@ -21,24 +21,24 @@ window#greeter {
     .auth {
         @include floating_widget;
         border-radius: $radius;
-        min-width: 800px;
+        min-width: 1600px;
         padding: 0;
 
         .wallpaper {
-            min-height: 440px;
+            min-height: 880px;
             background-size: cover;
             border-top-left-radius: $radius;
             border-top-right-radius: $radius;
         }
 
         .wallpaper-contrast {
-            min-height: 200px;
+            min-height: 400px;
         }
 
         .avatar {
             border-radius: 99px;
-            min-width: 280px;
-            min-height: 280px;
+            min-width: 560px;
+            min-height: 560px;
             background-size: cover;
             box-shadow: 3px 3px 6px 0 $shadow-color;
             margin-bottom: $spacing;

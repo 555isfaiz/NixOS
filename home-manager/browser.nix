@@ -13,20 +13,26 @@
     profiles.default = {
       name = "Default";
       settings = {
-        "browser.tabs.loadInBackground" = true;
+        "browser.tabs.loadInBackground" = false;
         "widget.gtk.rounded-bottom-corners.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "svg.context-properties.content.enabled" = true;
+        "layout.css.has-selector.enabled" = true;
+        "browser.urlbar.suggest.calculator" = true;
+        "browser.urlbar.unitConversion.enabled" = true;
+        "browser.urlbar.trimHttps" = true;
+        "browser.urlbar.trimURLs" = true;
+        "widget.gtk.ignore-bogus-leave-notify" = 1;
         "gnomeTheme.hideSingleTab" = true;
         "gnomeTheme.bookmarksToolbarUnderTabs" = true;
         "gnomeTheme.normalWidthTabs" = false;
         "gnomeTheme.tabsAsHeaderbar" = false;
       };
       userChrome = ''
-        @import "firefox-gnome-theme/userChrome.css";
+        @import "firefox-gnome-theme/chrome/userChrome.css";
       '';
       userContent = ''
-        @import "firefox-gnome-theme/userContent.css";
+        @import "firefox-gnome-theme/chrome/userContent.css";
       '';
     };
   };

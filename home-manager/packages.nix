@@ -20,6 +20,8 @@
       nodejs
     ];
     cli = [
+      (callPackage ./fehviewer.nix {})
+      xdg-user-dirs
       python3
       feh
       bat
@@ -30,5 +32,15 @@
       lazydocker
       lazygit
     ];
+  };
+  xdg = {
+    desktopEntries."fehviewer" = {
+      name = "fehviewer";
+      comment = "Ehentai";
+      icon = "fehviewer";
+      exec = "${pkgs.neovim}/bin/fehviewer";
+      categories = ["Adult"];
+      terminal = false;
+    };
   };
 }
