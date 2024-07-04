@@ -11,7 +11,6 @@
       "FantasqueSansMono"
       "FiraCode"
       "Mononoki"
-      "Monaspace"
     ];
   };
 
@@ -37,6 +36,7 @@ in {
   home = {
     
     packages = with pkgs; [
+      monaspace
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
@@ -46,7 +46,7 @@ in {
       font.package
       cursorTheme.package
       iconTheme.package
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       papirus-icon-theme
     ];
     sessionVariables = {

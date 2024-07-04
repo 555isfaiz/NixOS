@@ -70,6 +70,22 @@ in {
       };
       extraConfig = let
         conf = builtins.toJSON {
+          keybindings = [
+            {
+              name = "to line start";
+              modifier = "control";
+              keycode = "char_h";
+              mode = "vi_normal";
+              event = { edit = "MoveToLineStart";};
+            }
+            {
+              name = "to line end";
+              modifier = "control";
+              keycode = "char_l";
+              mode = "vi_normal";
+              event = { edit = "MoveToLineEnd";};
+            }
+          ];
           show_banner = false;
           edit_mode = "vi";
 
@@ -77,7 +93,7 @@ in {
           rm.always_trash = true;
 
           table = {
-            mode = "compact"; # compact thin rounded
+            mode = "rounded"; # compact thin rounded
             index_mode = "always"; # alway never auto
             header_on_separator = false;
           };

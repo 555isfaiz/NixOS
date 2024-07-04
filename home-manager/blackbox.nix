@@ -9,7 +9,7 @@
     enable = true;
 
     alias = ["xterm" "kgx" "gnome-terminal"];
-    sessionVariable = true;
+    sessionVariable = false;
 
     settings = {
       command-as-login-shell = true;

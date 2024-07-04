@@ -109,7 +109,7 @@ in {
   programs.tmux = {
     enable = true;
     plugins = with pkgs.tmuxPlugins; [
-      vim-tmux-navigator
+      #vim-tmux-navigator
       yank
     ];
     prefix = "C-Space";

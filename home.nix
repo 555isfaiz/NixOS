@@ -9,6 +9,7 @@
   home = {
     sessionVariables = {
       NVD_BACKEND = "direct";
+      MOZ_DISABLE_RDD_SANDBOX = "1";
       NIXOS_OZONE_WL = "1";
       LIBVA_DRIVER_NAME = "nvidia";
       QT_QPA_PLATFORM = "wayland";

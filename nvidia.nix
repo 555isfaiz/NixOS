@@ -10,6 +10,7 @@
     # driSupport = true;
     # driSupport32Bit = true;
     extraPackages = with pkgs; [
+      nvidia-vaapi-driver
       libva-utils
       libva
       vaapiVdpau
@@ -30,7 +31,7 @@
     };
 
     open = false;
-    nvidiaSettings = false; # gui app
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidiaSettings = true; # gui app
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 }

@@ -1,15 +1,17 @@
-{pkgs, ...}: {
+{pkgs, ...}: 
+let fehviewer = (pkgs.callPackage ./fehviewer.nix {}); in {
   imports = [
     ./modules/packages.nix
     ./scripts/blocks.nix
     ./scripts/nx-switch.nix
     ./scripts/vault.nix
   ];
-
+  
   packages = with pkgs; {
     linux = [
       (mpv.override {scripts = [mpvScripts.mpris];})
       vlc
+      blueman
       vscode
       blender
       unityhub
@@ -20,9 +22,16 @@
       nodejs
     ];
     cli = [
-      (callPackage ./fehviewer.nix {})
+      socat
+      jdk
+      maven
+      gcc
+      cmake
+      gnumake
+      fehviewer
       xdg-user-dirs
-      python3
+      python312
+      python312Packages.pip
       feh
       bat
       eza
@@ -37,8 +46,8 @@
     desktopEntries."fehviewer" = {
       name = "fehviewer";
       comment = "Ehentai";
-      icon = "fehviewer";
-      exec = "${pkgs.neovim}/bin/fehviewer";
+      icon = "nvim";
+      exec = "${fehviewer}/bin/fehviewer";
       categories = ["Adult"];
       terminal = false;
     };

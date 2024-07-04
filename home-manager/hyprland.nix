@@ -111,6 +111,7 @@ in {
         resizeactive = binding "SUPER CTRL" "resizeactive";
         mvactive = binding "SUPER ALT" "moveactive";
         mvtows = binding "SUPER SHIFT" "movetoworkspace";
+        mvwin = binding "SUPER SHIFT" "movewindow";
         e = "exec, ags -b hypr";
         arr = [1 2 3 4 5 6 7 8 9];
       in
@@ -122,7 +123,7 @@ in {
           # ",XF86Launch4,   ${e} -r 'recorder.start()'"
           ",Print,         ${e} -r 'recorder.screenshot()'"
           "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
-          "SUPER, Return, exec, xterm" # xterm is a symlink, not actually xterm
+          "SUPER, Return, exec, alacritty" # xterm is a symlink, not actually xterm
           "SUPER, B, exec, firefox"
           "SUPER, E, exec, wezterm -e lf"
           "SUPER, Y, exec, nautilus"
@@ -146,6 +147,10 @@ in {
           (mvfocus "j" "d")
           (mvfocus "l" "r")
           (mvfocus "h" "l")
+          (mvwin "k" "u")
+          (mvwin "j" "d")
+          (mvwin "l" "r")
+          (mvwin "h" "l")
           (ws "left" "e-1")
           (ws "right" "e+1")
           (mvtows "left" "e-1")
@@ -169,6 +174,7 @@ in {
         ",XF86KbdBrightnessDown, exec, ${brightnessctl} -d asus::kbd_backlight set  1-"
         ",XF86AudioRaiseVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ +5%"
         ",XF86AudioLowerVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
+        ", XF86AudioMute,        exec, ${pactl} -- set-sink-mute 0 toggle"
       ];
 
       bindl = [
@@ -214,6 +220,7 @@ in {
           "border, 1, 10, default"
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
+          "specialWorkspace, 1, 6, myBezier, slidevert"
         ];
       };
 
