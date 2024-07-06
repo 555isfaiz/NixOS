@@ -10,7 +10,7 @@ let fehviewer = (pkgs.callPackage ./fehviewer.nix {}); in {
   packages = with pkgs; {
     linux = [
       (mpv.override {scripts = [mpvScripts.mpris];})
-      vlc
+      yesplaymusic
       blueman
       vscode
       blender
