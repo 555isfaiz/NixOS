@@ -105,6 +105,11 @@
 
   separator = "#[fg=${fg}]|";
 
+  primary_color = pkgs.writeShellScript "primary_color" ''
+    SCHEME=$(cat /home/fu1lp0w3r/.cache/ags/options.json | grep scheme | awk -F ":" '{print $2}' | sed "s/\"//g" | sed "s/,//g" | sed "s/ //g")
+    cat /home/fu1lp0w3r/.cache/ags/options.json| grep "theme.$SCHEME.primary.bg" | awk -F ":" '{print $2}' | sed "s/\"//g" | sed "s/,//g" | sed "s/ //g"
+  '';
+
 in {
   programs.tmux = {
     enable = true;
@@ -119,7 +124,6 @@ in {
     mouse = true;
     shell = "${pkgs.nushell}/bin/nu";
     extraConfig = ''
-      set -g @plugin 'aserowy/tmux.nvim'
       set-option -sa terminal-overrides ",xterm*:Tc"
       bind y copy-mode
       bind-key -T copy-mode-vi v send-keys -X begin-selection
@@ -138,6 +142,7 @@ in {
 
       # navigation
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?\.?(view|n?vim?x?)(-wrapped)?(diff)?$'"
+      primary_color="${primary_color}"
 
       bind-key -n 'M-H' if-shell "$is_vim" 'send-keys M-H' 'select-pane -L'
       bind-key -n 'M-J' if-shell "$is_vim" 'send-keys M-J' 'select-pane -D'
@@ -164,7 +169,7 @@ in {
       set-option -g status-right-length 100
       set-option -g @indicator_color "yellow"
       set-option -g @window_color "magenta"
-      set-option -g @main_accent "blue"
+      set-option -g @main_accent 'run-shell ${primary_color}'
       set-option -g pane-active-border fg=black
       set-option -g pane-border-style fg=black
       set-option -g status-style "bg=${bg} fg=${fg}"
@@ -173,6 +178,7 @@ in {
       set-option -g window-status-current-format "${current_window}"
       set-option -g window-status-format "${window_status}"
       set-option -g window-status-separator ""
+      set-hook -g session-created 'run-shell "tmux set -g @main_accent $(${primary_color})"'
     '';
   };
 }

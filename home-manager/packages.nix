@@ -22,6 +22,7 @@ let fehviewer = (pkgs.callPackage ./fehviewer.nix {}); in {
       nodejs
     ];
     cli = [
+      neofetch
       socat
       jdk
       maven

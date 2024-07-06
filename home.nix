@@ -14,8 +14,8 @@
       LIBVA_DRIVER_NAME = "nvidia";
       QT_QPA_PLATFORM = "wayland";
       GBM_BACKEND = "nvidia-drm";
-      GBM_BACKEND_PATH = "/run/opengl-driver/lib/gbm";
-      __GL_GSYNC_ALLOWED = "1";
+      #GBM_BACKEND_PATH = "/run/opengl-driver/lib/gbm";
+      #__GL_GSYNC_ALLOWED = "1";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       NIXPKGS_ALLOW_UNFREE = "1";
       NIXPKGS_ALLOW_INSECURE = "1";
