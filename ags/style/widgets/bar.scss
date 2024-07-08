@@ -91,7 +91,8 @@ $button-radius: $radius;
     }
 
     .media label {
-        margin: 0 ($spacing * .5)
+        margin: 0 ($spacing * .5);
+        font-size: 0.7em;
     }
 
     .taskbar .indicator.active {

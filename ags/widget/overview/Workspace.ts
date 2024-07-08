@@ -46,8 +46,8 @@ export default (id: number) => {
         class_name: "workspace",
         vpack: "center",
         css: options.overview.scale.bind().as(v => `
-            min-width: ${(v / 100) * size(id).w}px;
-            min-height: ${(v / 100) * size(id).h}px;
+            min-width: ${(v / 130) * size(id).w}px;
+            min-height: ${(v / 130) * size(id).h}px;
         `),
         setup(box) {
             box.hook(options.overview.scale, update)
