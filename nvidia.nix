@@ -32,6 +32,6 @@
 
     open = false;
     nvidiaSettings = true; # gui app
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 }

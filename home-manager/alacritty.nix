@@ -2,7 +2,15 @@
   pkgs,
   lib,
   ...
-}: {
+}: let 
+  set_alacritty_color = pkgs.writeShellScript "set_alacritty_color" ''
+    SCHEME=$(cat /home/fu1lp0w3r/.cache/ags/options.json | grep scheme | awk -F ":" '{print $2}' | sed "s/\"//g" | sed "s/,//g" | sed "s/ //g")
+    BG=$(cat /home/fu1lp0w3r/.cache/ags/options.json | grep "theme.$SCHEME.bg" | awk -F ":" '{print $2}' | sed "s/\"//g" | sed "s/,//g" | sed "s/ //g")
+    FG=$(cat /home/fu1lp0w3r/.cache/ags/options.json | grep "theme.$SCHEME.fg" | awk -F ":" '{print $2}' | sed "s/\"//g" | sed "s/,//g" | sed "s/ //g")
+    alacritty msg config "colors.primary.background=\"$BG\"" 
+    alacritty msg config "colors.primary.foreground=\"$FG\""
+  ''; 
+in {
   home.sessionVariables.TERMINAL = "alacritty";
   programs.alacritty = {
     enable = true;
@@ -42,7 +50,7 @@
         };
       };
       window = {
-        opacity = 0.95;
+        opacity = 0.9;
         padding = {
           x = 12;
           y = 12;
@@ -57,7 +65,7 @@
         args = [
           "-l"
           "-c"
-          "tmux"
+          "zsh ${set_alacritty_color}; tmux"
         ];
       };
     };

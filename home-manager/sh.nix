@@ -139,5 +139,10 @@ in {
         use ${pkgs.nu_scripts}/share/nu_scripts/modules/background_task/task.nu
       '';
     };
+    direnv = {
+      enable = true;
+      enableNushellIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
   };
 }

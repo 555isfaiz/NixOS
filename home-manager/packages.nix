@@ -10,21 +10,30 @@ let fehviewer = (pkgs.callPackage ./fehviewer.nix {}); in {
   packages = with pkgs; {
     linux = [
       (mpv.override {scripts = [mpvScripts.mpris];})
-      yesplaymusic
+      zed-editor
+      netease-cloud-music-gtk
       blueman
-      vscode
+      vscode-fhs
       blender
       unityhub
-      gnome-secrets
+      # gnome-secrets
       # yabridge
       # yabridgectl
       # wine-staging
       nodejs
     ];
     cli = [
-      neofetch
+      usql
+      pyright
+      jdt-language-server
+      gamemode
+      clang-tools
+      docker-compose
+      msgpack-tools
+      nitch
       socat
       jdk
+      gradle
       maven
       gcc
       cmake
@@ -33,6 +42,8 @@ let fehviewer = (pkgs.callPackage ./fehviewer.nix {}); in {
       xdg-user-dirs
       python312
       python312Packages.pip
+      ruff
+      ruff-lsp  
       feh
       bat
       eza

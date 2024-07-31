@@ -33,6 +33,8 @@
     neovim
     git
     wget
+    man-pages 
+    man-pages-posix
   ];
 
   # services

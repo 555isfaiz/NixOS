@@ -40,9 +40,9 @@
   programs.google-chrome = {
     enable = true;
     commandLineArgs = [
-      # "--ozone-platform=wayland"
-      # "--use-gl=angle"
-      "--ozone-platform=x11"
+      "--ozone-platform=wayland"
+      "--use-gl=angle"
+      # "--ozone-platform=x11"
       # "--enable-gpu-rasterization"
       "--enable-accelerated-video-decode"
       "--enable-accelerated-2d-canvas"

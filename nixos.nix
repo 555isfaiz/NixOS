@@ -17,6 +17,7 @@ in {
       "video"
       "libvirtd"
       "docker"
+      "gamemode"
     ];
   };
 

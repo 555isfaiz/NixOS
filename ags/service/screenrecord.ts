@@ -79,6 +79,8 @@ class Recorder extends Service {
             await sh(`wayshot -f ${file} -s "${size}"`)
         }
 
+        if (dependencies("swappy"))
+          sh(`swappy -f ${file}`)
         bash(`wl-copy < ${file}`)
 
         Utils.notify({

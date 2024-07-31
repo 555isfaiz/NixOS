@@ -39,7 +39,7 @@ in {
     settings = {
       exec-once = [
         "ags -b hypr"
-        "hyprctl setcursor Qogir 24"
+        "hyprctl setcursor Qogir 48"
       ];
 
       xwayland.force_zero_scaling = true;

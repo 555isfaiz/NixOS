@@ -42,7 +42,7 @@
     "file://${home}/.config Config"
     "file:///run/media/${username}/common"
     "file:///run/media/${username}/extra"
-    "smb://192.168.1.110/daboyuan"
+    "smb://192.168.1.110/daboyuan Mac"
   ];
 
   programs.home-manager.enable = true;

@@ -102,7 +102,7 @@ local null_ls = require("null-ls")
 
 null_ls.setup({
     sources = {
-        null_ls.builtins.formatting.ruff,
+        -- null_ls.builtins.formatting.ruff,
         null_ls.builtins.diagnostics.vint,
         null_ls.builtins.formatting.phpcbf
     },
@@ -191,6 +191,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+require'lspconfig'.ruff.setup{}
+
 END
 
 nnoremap <silent> <A-o> :ClangdSwitchSourceHeader<CR>

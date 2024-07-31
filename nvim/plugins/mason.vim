@@ -14,18 +14,18 @@ require("mason-lspconfig").setup_handlers {
         end,
         -- Next, you can provide a dedicated handler for specific servers.
         -- For example, a handler override for the `rust_analyzer`:
-         ["pyright"] = function ()
-            require("lspconfig")["pyright"].setup {
-              capabilities = require("cmp_nvim_lsp").default_capabilities();
-              settings = {
-                  python = {
-                    analysis = {
-                       typeCheckingMode = 'off'
-                      }
-                    }
-                }
-              }
-         end,
+         -- ["pyright"] = function ()
+         --    require("lspconfig")["pyright"].setup {
+         --      capabilities = require("cmp_nvim_lsp").default_capabilities();
+         --      settings = {
+         --          python = {
+         --            analysis = {
+         --               typeCheckingMode = 'off'
+         --              }
+         --            }
+         --        }
+         --      }
+         -- end,
         ["jdtls"] = function ()
             -- The key is to do nothing here...
          end
