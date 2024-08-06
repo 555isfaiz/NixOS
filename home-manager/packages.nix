@@ -13,7 +13,7 @@ let fehviewer = (pkgs.callPackage ./fehviewer.nix {}); in {
       zed-editor
       netease-cloud-music-gtk
       blueman
-      vscode-fhs
+      vscode
       blender
       unityhub
       # gnome-secrets

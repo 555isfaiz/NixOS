@@ -96,17 +96,22 @@ require("neodev").setup({
   -- add any options here, or leave empty to use the default settings
 })
 
-require('Comment').setup()
-
-local null_ls = require("null-ls")
-
-null_ls.setup({
-    sources = {
-        -- null_ls.builtins.formatting.ruff,
-        null_ls.builtins.diagnostics.vint,
-        null_ls.builtins.formatting.phpcbf
-    },
+require("conform").setup({
+  formatters_by_ft = {
+    vim = { "vint" },
+    -- -- Conform will run multiple formatters sequentially
+    -- python = { "isort", "black" },
+    -- -- You can customize some of the format options for the filetype (:help conform.format)
+    -- rust = { "rustfmt", lsp_format = "fallback" },
+    -- -- Conform will run the first available formatter
+    -- javascript = { "prettierd", "prettier", stop_after_first = true },
+  },
+  default_format_opts = {
+    lsp_format = "fallback",
+  },
 })
+
+require('Comment').setup()
 
 require('aerial').setup({
   backends = { "treesitter", "lsp", "markdown", "man" },
@@ -187,6 +192,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
+      require('conform').format()
       vim.lsp.buf.format { async = true }
     end, opts)
   end,

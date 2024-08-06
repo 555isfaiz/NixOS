@@ -3,5 +3,5 @@ runtime ./settings.vim
 runtime ./theme.vim
 
 " au ColorScheme * hi Normal ctermbg=None
-colorscheme kanagawa
+colorscheme catppuccin-macchiato
 set laststatus=3

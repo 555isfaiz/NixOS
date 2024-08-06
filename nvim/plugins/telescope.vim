@@ -5,6 +5,7 @@ nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap fh <cmd>Telescope help_tags<cr>
 nnoremap fv <cmd>Telescope command_history<cr>
 nnoremap fc <cmd>Telescope commands<cr>
+nnoremap fi <cmd>Telescope lsp_implementations<cr>
 nnoremap fu <cmd>Telescope treesitter default_text=function\ <cr>
 nnoremap ft <cmd>Telescope treesitter<cr>
 nnoremap fm <cmd>Telescope treesitter default_text=method\ <cr>

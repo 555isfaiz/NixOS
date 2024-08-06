@@ -1,5 +1,3 @@
-
-
 lua << END
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -14,7 +12,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+require("lazy").setup(
+ {
  {
     "tiagovla/tokyodark.nvim",
     opts = {
@@ -24,7 +23,7 @@ require("lazy").setup({
         require("tokyodark").setup(opts) -- calling setup is optional
     end,
 },
-{ 
+{
   "nvim-neotest/neotest",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -32,7 +31,15 @@ require("lazy").setup({
     "antoinemadec/FixCursorHold.nvim"
   }
 },
+{
+  "folke/persistence.nvim",
+  event = "BufReadPre", -- this will only start session saving when an actual file was opened
+  opts = {
+    -- add any custom options here
+  }
+},
  'rebelot/kanagawa.nvim',
+ 'marko-cerovac/material.nvim',
  'nvim-neotest/nvim-nio',
  'Shatur/neovim-ayu',
   'goolord/alpha-nvim',
@@ -61,7 +68,7 @@ require("lazy").setup({
  {'iamcco/markdown-preview.nvim', build = 'cd app && yarn install'}, -- Markdown Preview
  'rcarriga/nvim-notify', -- Notification Boxes
  'xiyaowong/nvim-transparent', -- Transparent Background
- {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'}, 
+ {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
  'nvim-treesitter/nvim-treesitter-textobjects',
 --  'wakatime/vim-wakatime' -- Time Logging
  'ap/vim-css-color', -- CSS Color Preview
@@ -83,7 +90,7 @@ require("lazy").setup({
  'p00f/clangd_extensions.nvim',
  'numToStr/Comment.nvim',
  'slyces/hierarchy.nvim',
- 'jose-elias-alvarez/null-ls.nvim',
+ 'stevearc/conform.nvim',
  'lewis6991/hover.nvim',
  'folke/noice.nvim',
  'windwp/nvim-autopairs',
@@ -111,7 +118,8 @@ require("lazy").setup({
 -- For luasnip users.
  'L3MON4D3/LuaSnip',
  'saadparwaiz1/cmp_luasnip'
-})
+},
+{lockfile = os.getenv('HOME') .. "/.config/lazy-lock.json",})
 
 
 END
@@ -138,3 +146,4 @@ runtime ./plugins/gitsigns.vim
 runtime ./plugins/leap.vim
 runtime ./plugins/transparent.vim
 runtime ./plugins/trouble.vim
+runtime ./plugins/persistence.vim

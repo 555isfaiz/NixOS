@@ -139,7 +139,6 @@ in {
           "SUPER, T, togglefloating"
           "SUPER, F, fullscreen, 0"
           "SUPER, M, fullscreen, 1"
-          "SUPER, O, fakefullscreen"
           "SUPER, P, pseudo"
           "SUPER, O, togglesplit"
           "SUPER, S, togglespecialworkspace"
