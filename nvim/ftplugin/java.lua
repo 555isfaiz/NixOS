@@ -76,7 +76,7 @@ local config = {
     cmd = {
         'jdtls',
         '-config',
-        '/home/fu1lp0w3r/.cache/jdtls/config',
+        home_dir .. '/.cache/jdtls/config',
         '-data',
         workspace_dir,
         get_lombok_javaagent(),

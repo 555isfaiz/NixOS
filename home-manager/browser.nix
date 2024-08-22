@@ -2,8 +2,8 @@
   home = {
     sessionVariables.BROWSER = "firefox";
 
-    file."firefox-gnome-theme" = {
-      target = ".mozilla/firefox/default/chrome/firefox-gnome-theme";
+    file."firefox-shyfox" = {
+      target = ".mozilla/firefox/default/chrome/firefox-shyfox";
       source = inputs.firefox-gnome-theme;
     };
   };
@@ -29,10 +29,10 @@
         "gnomeTheme.tabsAsHeaderbar" = false;
       };
       userChrome = ''
-        @import "firefox-gnome-theme/chrome/userChrome.css";
+        @import "firefox-shyfox/chrome/userChrome.css";
       '';
       userContent = ''
-        @import "firefox-gnome-theme/chrome/userContent.css";
+        @import "firefox-shyfox/chrome/userContent.css";
       '';
     };
   };

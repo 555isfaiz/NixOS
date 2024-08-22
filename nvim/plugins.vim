@@ -31,6 +31,13 @@ require("lazy").setup(
     "antoinemadec/FixCursorHold.nvim"
   }
 },
+{ "anuvyklack/windows.nvim",
+   dependencies = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim"
+   },
+   opts = {}
+},
 {
   "folke/persistence.nvim",
   event = "BufReadPre", -- this will only start session saving when an actual file was opened

@@ -105,7 +105,7 @@ in {
         (f "de.haeckerfelix.Fragments")
         (f "com.github.Aylur.ags")
       ];
-
+      
       bind = let
         binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
         mvfocus = binding "SUPER" "movefocus";

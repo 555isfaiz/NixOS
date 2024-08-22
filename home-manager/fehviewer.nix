@@ -2,7 +2,7 @@
 
 flutter313.buildFlutterApplication rec {
   pname = "fehviwer";
-  version = "1.0";
+  version = "1.3";
 
   src = fetchFromGitHub {
     owner = "3003h";

@@ -7,6 +7,8 @@
     auto-optimise-store = true;
   };
 
+  time.hardwareClockInLocalTime = true;
+
   # camera
   # programs.droidcam.enable = true;
 
@@ -91,6 +93,7 @@
 
   # bootloader
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     tmp.cleanOnBoot = true;
     supportedFilesystems = ["ntfs"];
     loader = {

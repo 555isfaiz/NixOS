@@ -18,6 +18,8 @@ set laststatus=3
 nnoremap <silent> <Tab> :>1<CR>
 vnoremap <silent> <Tab> :'<,'>1><CR>gv
 
+map <silent> <C-m> :WindowsMaximize<CR>
+
 nnoremap <silent> <M-k> :m .-2<CR>==
 nnoremap <silent> <M-j> :m .+1<CR>==
 vnoremap <silent> <M-k> :m '<-2<CR>gv=gv
